@@ -169,4 +169,29 @@ html body .dashboard__userBlock__progress__text__button:hover {
     height: 180px;
   }
 }
+
+.line-chart {
+  -webkit-animation: fadeIn 600ms cubic-bezier(0.57, 0.25, 0.65, 1) 1 forwards;
+          animation: fadeIn 600ms cubic-bezier(0.57, 0.25, 0.65, 1) 1 forwards;
+  opacity: 0;
+  max-width: 640px;
+  width: 100%;
+}
+
+.aspect-ratio {
+  height: 0;
+  padding-bottom: 50%;
+}
+
+@-webkit-keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
 /*# sourceMappingURL=dashboard.css.map */
