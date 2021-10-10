@@ -17,10 +17,20 @@
     <div class="dashboard">
         <div class="dashboard__elem dashboard__weatherBlock">
             <div class="weather">
-                <h2 class="weather__title">Погода сегодня</h2>
-                <input type="text" class="weather__cityName" placeholder="Enter city name">
-                <button class="weather__citySend">Send</button>
-                <button class="weather__cityChange">Change</button>
+                <h2 class="weather__title">Weather</h2>
+                <input type="text" class="weather__cityName" id="cityName" placeholder="Enter city name">
+                <button class="weather__citySend" id="sendCity">Send</button>
+                <div class="weather__current current">
+                    <div class="current__line">
+                        <span class="current__line" id="w-location"></span>
+                        <button class="current__cityChange hidden" id="changeCity">Change</button>
+                    </div>
+                    <img src="" class="current__line" id="w-icon">
+                    <div class="current__line" id="w-temp"></div>
+                    <div class="current__line" id="w-status"></div>
+                    <div class="current__line" id="w-hi"></div>
+                    <div class="current__line" id="w-low"></div>
+                </div>
             </div>
         </div>
         <div class="dashboard__elem dashboard__userBlock">
@@ -35,8 +45,8 @@
             </div>
             <div class="dashboard__userBlock__progress">
                 <p class="dashboard__userBlock__progress__text">My progress:
-                    <button class="dashboard__userBlock__progress__text__button" 
-                    id="calculate_btn">Calculate</button></p>
+                    <button class="dashboard__userBlock__progress__text__button" id="calculate_btn">Calculate</button>
+                </p>
                 <div class="dashboard__userBlock__progress__gcristall">
                     <div id="gcristall"></div>
                 </div>
@@ -46,11 +56,11 @@
             </div>
         </div>
         <div class=" dashboard__elem dashboard__graphicsBlock">
-            <canvas id="chart"></canvas>>
+            <canvas id="chart"></canvas>
         </div>
         <div class="dashboard__elem dashboard__notesBlock">
             <div class="notes">
-                <h1 class="notes__title">Заметки</h1>
+                <h1 class="notes__title">Notes</h1>
                 <div class="notes__block ">
                     <div class="note">
                         <input class="note__text" placeholder="Заметка" required></input>
@@ -68,6 +78,7 @@
         </div>
     </div>
     <script src="bundle.js"></script>
+    <script src="dahsboard2.js"></script>
 </body>
 
 </html>

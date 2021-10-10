@@ -1,154 +1,215 @@
 @import "variables.scss";
 
 html {
+  margin: 0;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+
+  body {
     margin: 0;
-    min-height: 100%;
-    display: flex;
-    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(ellipse, $light-violet, $main-violet);
 
-    body {
-        margin: 0;
-        height: 100%;
-        width: 100%;
-        background: radial-gradient(ellipse, $light-violet, $main-violet);
+    .dashboard {
+      display: grid;
+      height: 100%;
+      width: 100%;
 
-        .dashboard {
-            display: grid;
-            height: 100%;
-            width: 100%;
+      @media screen and (max-width: 700px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+      }
 
-            @media screen and (max-width: 700px) {
-                grid-template-columns: 1fr;
-                grid-template-rows: 1fr;
-            }
+      @media screen and (min-width: 701px) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+      }
 
-            @media screen and (min-width: 701px) {
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: 1fr 1fr;
-            }
+      &__elem {
+        background-color: $superlight-violet;
+        border-radius: 40px;
+        box-shadow: 0px 4px 16px rgba(78, 55, 55, 0.15);
+        margin: 20px;
+        font-family: $main-font;
+        text-align: center;
+      }
 
-            &__elem {
-                background-color: $superlight-violet;
-                border-radius: 40px;
-                box-shadow: 0px 4px 16px rgba(78, 55, 55, 0.15);
-                margin: 20px;
-                font-family: $main-font;
-                text-align: center;
-            }
+      &__graphicsBlock {
+        padding: 10px;
+      }
 
-            &__userBlock {
-                display: grid;
-                align-items: center;
-                color: $grey;
+      &__userBlock {
+        display: grid;
+        align-items: center;
+        padding: 10px;
+        color: $grey;
 
-                @media screen and (max-width: 280px) {
-                    width: 230px;
-                }
-
-                @media screen and (min-width: 281px) and (max-width: 320px) {
-                    width: 280px;
-                }
-
-                @media screen and (min-width: 321px) and (max-width: 800px) {
-                    width: 320px;
-                }
-
-                @media screen and (min-width: 801px) {
-                    width: 350px;
-                }
-
-                justify-self: center;
-
-
-                &__inputimg {
-                    font-size: small;
-                    margin-top: 8px;
-                }
-
-                &__img {
-                    border-radius: 100%;
-                    max-height: 200px;
-                    margin: 10px;
-                    justify-self: center;
-                }
-
-                &__name {
-                    font-size: 20px;
-                }
-
-                &__cristall {
-                    margin-top: 15px;
-                    margin-bottom: -10px;
-
-                    &__count {
-                        color: $grey;
-                        border: 1px solid;
-                        border-color: $light-violet;
-                        font-size: 19px;
-                        font-weight: bold;
-                        width: 70px;
-                        text-align: center;
-                    }
-                }
-
-                &__progress {
-                    display: grid;
-                    position: relative;
-
-                    &__text {
-                        font-size: 20px;
-                        text-align: left;
-                        margin-left: 30px;
-
-                        &__button {
-                            margin-left: 20px;
-                            border-radius: 40px;
-                            border-color: $light-violet;
-                            color: $grey;
-                        }
-
-                        &__button:hover {
-                            background-color: $light-violet;
-                            color: white;
-                        }
-                    }
-                }
-            }
+        @media screen and (max-width: 280px) {
+          width: 230px;
         }
+
+        @media screen and (min-width: 281px) and (max-width: 320px) {
+          width: 280px;
+        }
+
+        @media screen and (min-width: 321px) and (max-width: 800px) {
+          width: 320px;
+        }
+
+        @media screen and (min-width: 801px) {
+          width: 350px;
+        }
+
+        justify-self: center;
+
+        &__inputimg {
+          font-size: small;
+          margin-top: 8px;
+          justify-self: center;
+        }
+
+        &__img {
+          border-radius: 100%;
+          max-height: 200px;
+          margin: 10px;
+          justify-self: center;
+        }
+
+        &__name {
+          font-size: 20px;
+        }
+
+        &__cristall {
+          margin-top: 15px;
+          margin-bottom: -10px;
+
+          &__count {
+            color: $grey;
+            border: 1px solid;
+            border-color: $light-violet;
+            font-size: 19px;
+            font-weight: bold;
+            width: 70px;
+            text-align: center;
+          }
+        }
+
+        &__progress {
+          display: grid;
+          position: relative;
+
+          &__text {
+            font-size: 20px;
+            text-align: left;
+            margin-left: 30px;
+
+            &__button {
+              margin-left: 20px;
+              border-radius: 40px;
+              border-color: $light-violet;
+              color: $grey;
+            }
+
+            &__button:hover {
+              background-color: $light-violet;
+              color: white;
+            }
+          }
+        }
+      }
     }
+  }
 }
 
 .animation {
-    position: relative;
-    animation: width-up 2s;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
+  position: relative;
+  animation: width-up 2s;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
 }
 
 @keyframes width-up {
-    from {
-        height: 0px;
-    }
+  from {
+    height: 0px;
+  }
 
-    to {
-        height: 180px;
-    }
+  to {
+    height: 180px;
+  }
 }
 
 .line-chart {
-    animation: fadeIn 600ms cubic-bezier(.57, .25, .65, 1) 1 forwards;
-    opacity: 0;
-    max-width: 640px;
-    width: 100%;
+  animation: fadeIn 600ms cubic-bezier(0.57, 0.25, 0.65, 1) 1 forwards;
+  opacity: 0;
+  max-width: 640px;
+  width: 100%;
 }
 
 .aspect-ratio {
-    height: 0;
-    padding-bottom: 50%; // 495h / 990w
+  height: 0;
+  padding-bottom: 50%; // 495h / 990w
 }
 
 @keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.current {
+  line-height: 1.5;
+  &__line:first-child {
+    font-weight: 600;
+  }
+  &__cityChange {
+    padding: 4px 8px;
+    border: none;
+    border-radius: 10px;
+  }
+  &__cityChange:hover {
+    filter: drop-shadow(1px 2px 4px hsl(266, 54%, 47%));
+    border: none;
+    border-radius: 10px;
+    background-color: $main-violet;
+    color: white;
+  }
+  &__line {
+    color: $grey;
+    font-size: 19px;
+  }
+}
+#w-icon {
+  width: 100px;
+}
+
+.weather {
+  padding: 10px;
+  &__title {
+    color: $dark-violet;
+    font-weight: 600;
+  }
+
+  &__cityName {
+    margin: 8px 0;
+  }
+
+  &__citySend {
+    padding: 4px 8px;
+    border: none;
+    border-radius: 10px;
+  }
+
+  &__citySend:hover {
+    filter: drop-shadow(1px 2px 4px hsl(266, 54%, 47%));
+    border: none;
+    border-radius: 10px;
+    background-color: $main-violet;
+    color: white;
+  }
 }
