@@ -16,7 +16,12 @@
 <body>
     <div class="dashboard">
         <div class="dashboard__elem dashboard__weatherBlock">
-            <h2>Погода сегодня</h2>
+            <div class="weather">
+                <h2 class="weather__title">Погода сегодня</h2>
+                <input type="text" class="weather__cityName" placeholder="Enter city name">
+                <button class="weather__citySend">Send</button>
+                <button class="weather__cityChange">Change</button>
+            </div>
         </div>
         <div class="dashboard__elem dashboard__userBlock">
             <img class="dashboard__userBlock__img" src="" id="tableBanner">
@@ -33,8 +38,24 @@
             </div>
         </div>
         <div class="dashboard__elem dashboard__notesBlock">
+            <div class="notes">
+                <h1 class="notes__title">Заметки</h1>
+                <div class="notes__block ">
+                    <div class="note">
+                        <input class="note__text" placeholder="Заметка" required></input>
+                        </form>
+                    </div>
+                    <button id="note__save-b">Add</button>
+                    <div class="result">
+                        <ul class="result__list">
+
+                        </ul>
+                    </div>
+                    <button id="note__delete-b">Delete all</button>
+                </div>
+            </div>
         </div>
-        <div class="dashboard__elem dashboard__graphicsBlock">
+        <div class=" dashboard__elem dashboard__graphicsBlock">
         </div>
     </div>
 
