@@ -92,13 +92,45 @@ html {
                 }
 
                 &__progress {
+                    display: grid;
+                    position: relative;
+
                     &__text {
                         font-size: 20px;
                         text-align: left;
                         margin-left: 30px;
+
+                        &__button {
+                            margin-left: 20px;
+                            border-radius: 40px;
+                            border-color: $light-violet;
+                            color: $grey;
+                        }
+
+                        &__button:hover {
+                            background-color: $light-violet;
+                            color: white;
+                        }
                     }
                 }
             }
         }
+    }
+}
+
+.animation {
+    position: relative;
+    animation: width-up 2s;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes width-up {
+    from {
+        height: 0px;
+    }
+
+    to {
+        height: 180px;
     }
 }

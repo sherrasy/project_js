@@ -31,11 +31,21 @@
             </div>
             <div class="dashboard__userBlock__cristall">
                 <img src="assets/diamond.png">
-                <input class="dashboard__userBlock__cristall__count" type="text">
+                <input class="dashboard__userBlock__cristall__count" id="userCristall" type="text">
             </div>
             <div class="dashboard__userBlock__progress">
-                <p class="dashboard__userBlock__progress__text">My progress:</p>
+                <p class="dashboard__userBlock__progress__text">My progress:
+                    <button class="dashboard__userBlock__progress__text__button" 
+                    id="calculate_btn">Calculate</button></p>
+                <div class="dashboard__userBlock__progress__gcristall">
+                    <div id="gcristall"></div>
+                </div>
+                <div class="dashboard__userBlock__progress__glection">
+                    <div id="glection"></div>
+                </div>
             </div>
+        </div>
+        <div class=" dashboard__elem dashboard__graphicsBlock">
         </div>
         <div class="dashboard__elem dashboard__notesBlock">
             <div class="notes">
@@ -55,10 +65,8 @@
                 </div>
             </div>
         </div>
-        <div class=" dashboard__elem dashboard__graphicsBlock">
-        </div>
     </div>
-    <script src="dashboard.js"></script>
+    <script src="bundle.js"></script>
 </body>
 
 </html>
