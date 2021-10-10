@@ -118,9 +118,55 @@ html body .dashboard__userBlock__cristall__count {
   text-align: center;
 }
 
+html body .dashboard__userBlock__progress {
+  display: -ms-grid;
+  display: grid;
+  position: relative;
+}
+
 html body .dashboard__userBlock__progress__text {
   font-size: 20px;
   text-align: left;
   margin-left: 30px;
+}
+
+html body .dashboard__userBlock__progress__text__button {
+  margin-left: 20px;
+  border-radius: 40px;
+  border-color: #cfcae4;
+  color: #7b7883;
+}
+
+html body .dashboard__userBlock__progress__text__button:hover {
+  background-color: #cfcae4;
+  color: white;
+}
+
+.animation {
+  position: relative;
+  -webkit-animation: width-up 2s;
+          animation: width-up 2s;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes width-up {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 180px;
+  }
+}
+
+@keyframes width-up {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 180px;
+  }
 }
 /*# sourceMappingURL=dashboard.css.map */

@@ -79,3 +79,108 @@ function fetchimage() {
 
 // Call fetch to get image from localStorage.
 fetchimage();
+
+let btn = document.getElementById('calculate_btn');
+btn.addEventListener('click', function(){Calculate()});
+
+function Calculate(){
+    let cristall = document.getElementById("userCristall");
+    if (cristall.value==""){
+        cristall.style.borderColor = "red";
+        alert('Введите количество кристаллов!')
+    }
+    else{
+        cristall.style.borderColor = "#cfcae4";
+        graphics_blue(Number(cristall.value));
+        let countLec = prompt('What week did you stop at the lectures?');
+        let reg = /^[ 0-9]+$/
+        if (reg.test(countLec)){
+            graphics_orange(countLec);
+        }
+        else{
+            alert('Input the number!');
+        }
+    }
+    
+}
+
+var ProgressBar = require('progressbar.js');
+
+function graphics_blue(userInput){
+    let cristall = document.getElementById("userCristall");
+    if (cristall.value==""){
+        cristall.style.borderColor = "red";
+        alert('Введите количество кристаллов!')
+    }
+    else{
+        cristall.style.borderColor = "#cfcae4";
+        document.querySelector('.dashboard__userBlock__progress').className='animation';
+        var bar = new ProgressBar.Line(gcristall, {
+            strokeWidth: 3,
+            easing: 'easeInOut',
+            duration: 1400,
+            color: 'rgb(117, 206, 249)',
+            trailColor: '#eee',
+            trailWidth: 1,
+            svgStyle: {width: '80%', height: '100%'},
+            text: {
+                style: {
+                // Text color.
+                // Default: same as stroke color (options.color)
+                color: '#999',
+                position: 'inherit',
+                right: '0',
+                top: '30px',
+                padding: 0,
+                margin: 10,
+                transform: null,
+                right: '20px'
+                },
+                autoStyleContainer: false
+            },
+            from: {color: '#FFEA82'},
+            to: {color: '#ED6A5A'},
+            step: (state, bar) => {
+              bar.setText('Cristalls ' + Math.round((userInput * 100)/87) + ' %');
+            }
+            });
+            
+          bar.animate(1.0);  // Number from 0.0 to 1.0
+    }
+    
+}
+
+function graphics_orange(countLec){
+    var bar = new ProgressBar.Line(glection, {
+        strokeWidth: 3,
+        easing: 'easeInOut',
+        duration: 1400,
+        color: 'rgb(255, 205, 117)',
+        trailColor: '#eee',
+        trailWidth: 1,
+        svgStyle: {width: '80%', height: '100%'},
+        text: {
+            style: {
+            // Text color.
+            // Default: same as stroke color (options.color)
+            color: '#999',
+            position: 'inherit',
+            right: '0',
+            top: '30px',
+            padding: 0,
+            margin: 10,
+            transform: null,
+            right: '20px'
+            },
+            autoStyleContainer: false
+        },
+        from: {color: '#FFEA82'},
+        to: {color: '#ED6A5A'},
+        step: (state, bar) => {
+            bar.setText('Lectures ' + Math.round(bar.value() * 100) + ' %');
+        }
+        });
+        bar.animate(1.0);  // Number from 0.0 to 1.0
+}
+    
+
