@@ -84,6 +84,7 @@ let btn = document.getElementById('calculate_btn');
 btn.addEventListener('click', function(){Calculate()});
 
 function Calculate(){
+    document.querySelector('.dashboard__userBlock__progress').classList.remove='animation';
     let cristall = document.getElementById("userCristall");
     if (cristall.value==""){
         cristall.style.borderColor = "red";
@@ -91,6 +92,8 @@ function Calculate(){
     }
     else{
         cristall.style.borderColor = "#cfcae4";
+        document.getElementById('gcristall').innerHTML="";
+        document.getElementById('glection').innerHTML="";
         graphics_blue(Number(cristall.value));
         let countLec = prompt('What week did you stop at the lectures?');
         let reg = /^[ 0-9]+$/
@@ -114,7 +117,7 @@ function graphics_blue(userInput){
     }
     else{
         cristall.style.borderColor = "#cfcae4";
-        document.querySelector('.dashboard__userBlock__progress').className='animation';
+        document.querySelector('.dashboard__userBlock__progress').classList.add='animation';
         var bar = new ProgressBar.Line(gcristall, {
             strokeWidth: 3,
             easing: 'easeInOut',
@@ -177,7 +180,7 @@ function graphics_orange(countLec){
         from: {color: '#FFEA82'},
         to: {color: '#ED6A5A'},
         step: (state, bar) => {
-            bar.setText('Lectures ' + Math.round(bar.value() * 100) + ' %');
+            bar.setText('Lectures ' + Math.round((countLec * 100)/31) + ' %');
         }
         });
         bar.animate(1.0);  // Number from 0.0 to 1.0
