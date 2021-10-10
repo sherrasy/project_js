@@ -119,6 +119,26 @@ html {
           }
         }
       }
+
+      &__weatherBlock {
+        display: grid;
+        justify-self: center;
+        @media screen and (max-width: 280px) {
+          width: 230px;
+        }
+
+        @media screen and (min-width: 281px) and (max-width: 320px) {
+          width: 280px;
+        }
+
+        @media screen and (min-width: 321px) and (max-width: 800px) {
+          width: 320px;
+        }
+
+        @media screen and (min-width: 801px) {
+          width: 350px;
+        }
+      }
     }
   }
 }
@@ -163,6 +183,9 @@ html {
 }
 
 .current {
+  display: grid;
+  grid-gap: 10px;
+  justify-content: center;
   line-height: 1.5;
   &__line:first-child {
     font-weight: 600;

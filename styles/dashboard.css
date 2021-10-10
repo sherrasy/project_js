@@ -111,6 +111,30 @@ html body .dashboard__userBlock__progress__text__button:hover {
   background-color: #cfcae4;
   color: white;
 }
+html body .dashboard__weatherBlock {
+  display: grid;
+  justify-self: center;
+}
+@media screen and (max-width: 280px) {
+  html body .dashboard__weatherBlock {
+    width: 230px;
+  }
+}
+@media screen and (min-width: 281px) and (max-width: 320px) {
+  html body .dashboard__weatherBlock {
+    width: 280px;
+  }
+}
+@media screen and (min-width: 321px) and (max-width: 800px) {
+  html body .dashboard__weatherBlock {
+    width: 320px;
+  }
+}
+@media screen and (min-width: 801px) {
+  html body .dashboard__weatherBlock {
+    width: 350px;
+  }
+}
 
 .animation {
   position: relative;
@@ -149,6 +173,9 @@ html body .dashboard__userBlock__progress__text__button:hover {
 }
 
 .current {
+  display: grid;
+  grid-gap: 10px;
+  justify-content: center;
   line-height: 1.5;
 }
 .current__line:first-child {
