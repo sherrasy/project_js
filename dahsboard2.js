@@ -71,10 +71,6 @@ changeBtn.onclick = function changeCity() {
   changeBtn.classList.add("hidden");
 };
 
-document.addEventListener("DOMContentLoaded", function (event) {
-  getWeather();
-});
-
 const addNoteBtn = document.getElementById("addNote");
 const deleteNoteBtn = document.getElementsByClassName("deleteNote");
 const deleteAllBtn = document.getElementById("deleteAll");
@@ -85,17 +81,43 @@ addNoteBtn.onclick = function addNote() {
   const newLi = document.createElement("li");
   const text = document.createElement("span");
   text.classList.add("note-body");
+  const deleteNoteBtn = document.createElement("button");
 
   const noteText = noteInput.value;
   if (!noteInput.value) {
     alert("Add text of your note");
   } else {
     text.append(noteText);
+    deleteNoteBtn.innerHTML = "X";
+    deleteNoteBtn.classList.add("deleteNote");
+    ul.appendChild(newLi).append(text, deleteNoteBtn);
+    noteInput.value = "";
   }
-  const newDelBtn = document.createElement("button");
-  newDelBtn.innerHTML = "X";
-  newDelBtn.classList.add("deleteNote");
+  deleteNote(deleteNoteBtn);
 
-  ul.appendChild(newLi).append(text, newDelBtn);
-  input.value = "";
+  // localStorage.setItem("notes", ul.innerHTML);
 };
+
+function deleteNote(element) {
+  element.addEventListener("click", (event) => {
+    element.parentElement.remove();
+    event.stopPropagation();
+  });
+}
+
+deleteAllBtn.onclick = function deleteNotes() {
+  ul.innerHTML = "";
+  // localStorage.removeItem("notes");
+};
+
+document.addEventListener("DOMContentLoaded", function (event) {
+  getWeather();
+  // const data = localStorage.getItem("notes");
+  // if (data) {
+  //   ul.innerHTML = data;
+  // }
+  const deleteNoteBtns = document.getElementsByClassName("deleteNote");
+  for (const button of deleteNoteBtns) {
+    deleteNote(button);
+  }
+});
