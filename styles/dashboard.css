@@ -1,115 +1,90 @@
 html {
   margin: 0;
   min-height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 html body {
   margin: 0;
   height: 100%;
   width: 100%;
   background: radial-gradient(ellipse, #cfcae4, #6f3acf);
 }
-
 html body .dashboard {
-  display: -ms-grid;
   display: grid;
   height: 100%;
   width: 100%;
 }
-
 @media screen and (max-width: 700px) {
   html body .dashboard {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-    -ms-grid-rows: 1fr;
-        grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
   }
 }
-
 @media screen and (min-width: 701px) {
   html body .dashboard {
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-    -ms-grid-rows: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
   }
 }
-
 html body .dashboard__elem {
   background-color: #f7f7f9;
   border-radius: 40px;
-  -webkit-box-shadow: 0px 4px 16px rgba(78, 55, 55, 0.15);
-          box-shadow: 0px 4px 16px rgba(78, 55, 55, 0.15);
+  box-shadow: 0px 4px 16px rgba(78, 55, 55, 0.15);
   margin: 20px;
   font-family: "Raleway", sans-serif;
   text-align: center;
 }
-
-html body .dashboard__userBlock {
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: #7b7883;
-  -ms-grid-column-align: center;
-      justify-self: center;
+html body .dashboard__graphicsBlock {
+  padding: 10px;
 }
-
+html body .dashboard__userBlock {
+  display: grid;
+  align-items: center;
+  padding: 10px;
+  color: #68666e;
+  justify-self: center;
+}
 @media screen and (max-width: 280px) {
   html body .dashboard__userBlock {
     width: 230px;
   }
 }
-
 @media screen and (min-width: 281px) and (max-width: 320px) {
   html body .dashboard__userBlock {
     width: 280px;
   }
 }
-
 @media screen and (min-width: 321px) and (max-width: 800px) {
   html body .dashboard__userBlock {
     width: 320px;
   }
 }
-
 @media screen and (min-width: 801px) {
   html body .dashboard__userBlock {
     width: 350px;
   }
 }
-
 html body .dashboard__userBlock__inputimg {
   font-size: small;
   margin-top: 8px;
+  justify-self: center;
 }
-
 html body .dashboard__userBlock__img {
   border-radius: 100%;
   max-height: 200px;
   margin: 10px;
-  -ms-grid-column-align: center;
-      justify-self: center;
+  justify-self: center;
 }
-
 html body .dashboard__userBlock__name {
   font-size: 20px;
 }
-
 html body .dashboard__userBlock__cristall {
   margin-top: 15px;
   margin-bottom: -10px;
 }
-
 html body .dashboard__userBlock__cristall__count {
-  color: #7b7883;
+  color: #68666e;
   border: 1px solid;
   border-color: #cfcae4;
   font-size: 19px;
@@ -117,48 +92,55 @@ html body .dashboard__userBlock__cristall__count {
   width: 70px;
   text-align: center;
 }
-
 html body .dashboard__userBlock__progress {
-  display: -ms-grid;
   display: grid;
   position: relative;
 }
-
 html body .dashboard__userBlock__progress__text {
   font-size: 20px;
   text-align: left;
   margin-left: 30px;
 }
-
 html body .dashboard__userBlock__progress__text__button {
   margin-left: 20px;
   border-radius: 40px;
   border-color: #cfcae4;
-  color: #7b7883;
+  color: #68666e;
 }
-
 html body .dashboard__userBlock__progress__text__button:hover {
   background-color: #cfcae4;
   color: white;
 }
+html body .dashboard__weatherBlock {
+  display: grid;
+  justify-self: center;
+}
+@media screen and (max-width: 280px) {
+  html body .dashboard__weatherBlock {
+    width: 230px;
+  }
+}
+@media screen and (min-width: 281px) and (max-width: 320px) {
+  html body .dashboard__weatherBlock {
+    width: 280px;
+  }
+}
+@media screen and (min-width: 321px) and (max-width: 800px) {
+  html body .dashboard__weatherBlock {
+    width: 320px;
+  }
+}
+@media screen and (min-width: 801px) {
+  html body .dashboard__weatherBlock {
+    width: 350px;
+  }
+}
 
 .animation {
   position: relative;
-  -webkit-animation: width-up 2s;
-          animation: width-up 2s;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-@-webkit-keyframes width-up {
-  from {
-    height: 0px;
-  }
-  to {
-    height: 180px;
-  }
+  animation: width-up 2s;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
 }
 
 @keyframes width-up {
@@ -169,10 +151,8 @@ html body .dashboard__userBlock__progress__text__button:hover {
     height: 180px;
   }
 }
-
 .line-chart {
-  -webkit-animation: fadeIn 600ms cubic-bezier(0.57, 0.25, 0.65, 1) 1 forwards;
-          animation: fadeIn 600ms cubic-bezier(0.57, 0.25, 0.65, 1) 1 forwards;
+  animation: fadeIn 600ms cubic-bezier(0.57, 0.25, 0.65, 1) 1 forwards;
   opacity: 0;
   max-width: 640px;
   width: 100%;
@@ -183,15 +163,64 @@ html body .dashboard__userBlock__progress__text__button:hover {
   padding-bottom: 50%;
 }
 
-@-webkit-keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
 @keyframes fadeIn {
   to {
     opacity: 1;
   }
 }
-/*# sourceMappingURL=dashboard.css.map */
+.hidden {
+  display: none;
+}
+
+.current {
+  display: grid;
+  grid-gap: 10px;
+  justify-content: center;
+  line-height: 1.5;
+}
+.current__line:first-child {
+  font-weight: 600;
+}
+.current__cityChange {
+  padding: 4px 8px;
+  border: none;
+  border-radius: 10px;
+}
+.current__cityChange:hover {
+  filter: drop-shadow(1px 2px 4px #6f37b9);
+  border: none;
+  border-radius: 10px;
+  background-color: #6f3acf;
+  color: white;
+}
+.current__line {
+  color: #68666e;
+  font-size: 19px;
+}
+
+#w-icon {
+  width: 100px;
+}
+
+.weather {
+  padding: 10px;
+}
+.weather__title {
+  color: #4e2a92;
+  font-weight: 600;
+}
+.weather__cityName {
+  margin: 8px 0;
+}
+.weather__citySend {
+  padding: 4px 8px;
+  border: none;
+  border-radius: 10px;
+}
+.weather__citySend:hover {
+  filter: drop-shadow(1px 2px 4px #6f37b9);
+  border: none;
+  border-radius: 10px;
+  background-color: #6f3acf;
+  color: white;
+}/*# sourceMappingURL=dashboard.css.map */
