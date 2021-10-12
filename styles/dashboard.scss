@@ -66,8 +66,6 @@ html {
 
         &__inputimg {
           font-size: small;
-          margin-top: 8px;
-          justify-self: center;
         }
 
         &__img {
@@ -78,7 +76,9 @@ html {
         }
 
         &__name {
-          font-size: 20px;
+          font-size: 1.5em;
+          color: $dark-violet;
+          font-weight: 600;
         }
 
         &__cristall {
@@ -102,20 +102,7 @@ html {
 
           &__text {
             font-size: 20px;
-            text-align: left;
-            margin-left: 30px;
-
-            &__button {
-              margin-left: 20px;
-              border-radius: 40px;
-              border-color: $light-violet;
-              color: $grey;
-            }
-
-            &__button:hover {
-              background-color: $light-violet;
-              color: white;
-            }
+            text-align: center;
           }
         }
       }
@@ -123,6 +110,7 @@ html {
       &__weatherBlock {
         display: grid;
         justify-self: center;
+
         @media screen and (max-width: 280px) {
           width: 230px;
         }
@@ -187,32 +175,24 @@ html {
   grid-gap: 10px;
   justify-content: center;
   line-height: 1.5;
+
   &__line:first-child {
     font-weight: 600;
   }
-  &__cityChange {
-    padding: 4px 8px;
-    border: none;
-    border-radius: 10px;
-  }
-  &__cityChange:hover {
-    filter: drop-shadow(1px 2px 4px hsl(266, 54%, 47%));
-    border: none;
-    border-radius: 10px;
-    background-color: $main-violet;
-    color: white;
-  }
+
   &__line {
     color: $grey;
     font-size: 19px;
   }
 }
+
 #w-icon {
   width: 100px;
 }
 
 .weather {
   padding: 10px;
+
   &__title {
     color: $dark-violet;
     font-weight: 600;
@@ -221,18 +201,18 @@ html {
   &__cityName {
     margin: 8px 0;
   }
+}
 
-  &__citySend {
-    padding: 4px 8px;
-    border: none;
-    border-radius: 10px;
-  }
+button {
+  padding: 4px 8px;
+  border: none;
+  border-radius: 10px;
+}
 
-  &__citySend:hover {
-    filter: drop-shadow(1px 2px 4px hsl(266, 54%, 47%));
-    border: none;
-    border-radius: 10px;
-    background-color: $main-violet;
-    color: white;
-  }
+button:hover {
+  filter: drop-shadow(1px 2px 4px hsl(266, 54%, 47%));
+  border: none;
+  border-radius: 10px;
+  background-color: $main-violet;
+  color: white;
 }
