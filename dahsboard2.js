@@ -76,20 +76,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
 });
 
 const addNoteBtn = document.getElementById("addNote");
-const deleteNoteBtn = document.getElementById("deleteNote");
+const deleteNoteBtn = document.getElementsByClassName("deleteNote");
 const deleteAllBtn = document.getElementById("deleteAll");
-const noteInput = document.querySelector("input.note");
-const ul = document.querySelector("ul.resultList");
+const noteInput = document.querySelector("input.note__text");
+const ul = document.querySelector("ul.result__list");
 
 addNoteBtn.onclick = function addNote() {
   const newLi = document.createElement("li");
   const text = document.createElement("span");
   text.classList.add("note-body");
-  const noteText = noteInput.value;
 
+  const noteText = noteInput.value;
   if (!noteInput.value) {
     alert("Add text of your note");
   } else {
     text.append(noteText);
   }
+  const newDelBtn = document.createElement("button");
+  newDelBtn.innerHTML = "X";
+  newDelBtn.classList.add("deleteNote");
+
+  ul.appendChild(newLi).append(text, newDelBtn);
+  input.value = "";
 };
