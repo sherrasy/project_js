@@ -80,6 +80,16 @@ function fetchimage() {
 
 // Call fetch to get image from localStorage.
 fetchimage();
+let avatar = document.getElementById('tableBanner');
+avatar.addEventListener('click', function(){changeAvatar()});
+
+function changeAvatar(){
+    let userInput = document.getElementById('bannerImg');
+    userInput.style.opacity = "1";
+    userInput.style.margin = "10px"
+    userInput.style.marginLeft = "50px"
+}
+
 
 let btn = document.getElementById('calculate_btn');
 btn.addEventListener('click', function(){Calculate()});

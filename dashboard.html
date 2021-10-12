@@ -15,27 +15,27 @@
 
 <body>
     <div class="dashboard">
-        <div class="dashboard__elem dashboard__weatherBlock">
-            <div class="weather">
-                <h2 class="weather__title">Weather</h2>
-                <input type="text" class="weather__cityName" id="cityName" placeholder="Enter city name">
-                <button class="weather__citySend" id="sendCity">Send</button>
-                <div class="weather__current current">
-                    <div class="current__line">
-                        <span class="current__line" id="w-location"></span>
-                        <button class="current__cityChange hidden" id="changeCity">Change</button>
+        <div class="dashboard__elem dashboard__notesBlock">
+            <div class="notes">
+                <h1 class="notes__title">Notes</h1>
+                <div class="notes__block ">
+                    <div class="note">
+                        <input class="note__text" placeholder="Заметка" required></input>
+                        </form>
                     </div>
-                    <div class="current__line"><img src="" id="w-icon"></div>
-                    <div class="current__line" id="w-temp"></div>
-                    <div class="current__line" id="w-status"></div>
-                    <div class="current__line" id="w-hi"></div>
-                    <div class="current__line" id="w-low"></div>
+                    <button id="note__save-b">Add</button>
+                    <div class="result">
+                        <ul class="result__list">
+
+                        </ul>
+                    </div>
+                    <button id="note__delete-b">Delete all</button>
                 </div>
             </div>
         </div>
         <div class="dashboard__elem dashboard__userBlock">
-            <img class="dashboard__userBlock__img" src="" id="tableBanner">
             <input class="dashboard__userBlock__inputimg" type="file" id="bannerImg">
+            <img class="dashboard__userBlock__img" src="" id="tableBanner">
             <div class="dashboard__userBlock__name">
                 My name
             </div>
@@ -55,26 +55,26 @@
                 </div>
             </div>
         </div>
-        <div class=" dashboard__elem dashboard__graphicsBlock">
-            <canvas id="chart"></canvas>
-        </div>
-        <div class="dashboard__elem dashboard__notesBlock">
-            <div class="notes">
-                <h1 class="notes__title">Notes</h1>
-                <div class="notes__block ">
-                    <div class="note">
-                        <input class="note__text" placeholder="Заметка" required></input>
-                        </form>
+        <div class="dashboard__elem dashboard__weatherBlock">
+            <div class="weather">
+                <h2 class="weather__title">Weather</h2>
+                <input type="text" class="weather__cityName" id="cityName" placeholder="Enter city name">
+                <button class="weather__citySend" id="sendCity">Send</button>
+                <div class="weather__current current">
+                    <div class="current__line">
+                        <span class="current__line" id="w-location"></span>
+                        <button class="current__cityChange hidden" id="changeCity">Change</button>
                     </div>
-                    <button id="note__save-b">Add</button>
-                    <div class="result">
-                        <ul class="result__list">
-
-                        </ul>
-                    </div>
-                    <button id="note__delete-b">Delete all</button>
+                    <div class="current__line"><img src="" id="w-icon"></div>
+                    <div class="current__line" id="w-temp"></div>
+                    <div class="current__line" id="w-status"></div>
+                    <div class="current__line" id="w-hi"></div>
+                    <div class="current__line" id="w-low"></div>
                 </div>
             </div>
+        </div>
+        <div class=" dashboard__elem dashboard__graphicsBlock">
+            <canvas id="chart"></canvas>
         </div>
     </div>
     <script src="bundle.js"></script>
