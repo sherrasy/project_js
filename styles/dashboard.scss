@@ -216,3 +216,36 @@ button:hover {
   background-color: $main-violet;
   color: white;
 }
+.notes {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 10px;
+  &__title {
+    color: $dark-violet;
+  }
+
+  &__block {
+    line-height: 1.25px;
+  }
+}
+.note {
+  &__text {
+    margin: 0px 10px;
+  }
+}
+.result {
+  &__list {
+    text-decoration: none;
+  }
+}
+ul {
+  padding: 10px;
+}
+li {
+  text-align: start;
+  list-style-type: none;
+}
+.note-body {
+  margin: 0px 10px;
+}

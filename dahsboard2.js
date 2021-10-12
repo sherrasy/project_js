@@ -74,3 +74,22 @@ changeBtn.onclick = function changeCity() {
 document.addEventListener("DOMContentLoaded", function (event) {
   getWeather();
 });
+
+const addNoteBtn = document.getElementById("addNote");
+const deleteNoteBtn = document.getElementById("deleteNote");
+const deleteAllBtn = document.getElementById("deleteAll");
+const noteInput = document.querySelector("input.note");
+const ul = document.querySelector("ul.resultList");
+
+addNoteBtn.onclick = function addNote() {
+  const newLi = document.createElement("li");
+  const text = document.createElement("span");
+  text.classList.add("note-body");
+  const noteText = noteInput.value;
+
+  if (!noteInput.value) {
+    alert("Add text of your note");
+  } else {
+    text.append(noteText);
+  }
+};
