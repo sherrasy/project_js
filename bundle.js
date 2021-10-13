@@ -80,6 +80,7 @@ function fetchimage() {
 
 // Call fetch to get image from localStorage.
 fetchimage();
+
 let avatar = document.getElementById('tableBanner');
 avatar.addEventListener('click', function(){changeAvatar()});
 
@@ -220,9 +221,9 @@ function chartGraph(){
     var chart    = document.getElementById('chart').getContext('2d'),
     gradient = chart.createLinearGradient(0, 0, 0, 450);
 
-    gradient.addColorStop(0, 'rgba(255, 0,0, 0.5)');
-    gradient.addColorStop(0.5, 'rgba(255, 0, 0, 0.25)');
-    gradient.addColorStop(1, 'rgba(255, 0, 0, 0)');
+    gradient.addColorStop(0, 'rgba(111, 58, 207, 0.5)');
+    gradient.addColorStop(0.5, 'rgba(111, 58, 207, 0.25)');
+    gradient.addColorStop(1, 'rgba(111, 58, 207, 0)');
 
 
     var data  = {
@@ -230,9 +231,10 @@ function chartGraph(){
     datasets: [{
             label: 'Custom Label Name',
             backgroundColor: gradient,
+            fill: true,
             pointBackgroundColor: 'white',
             borderWidth: 1,
-            borderColor: '#911215',
+            borderColor: '#6f3acf',
             data: [50, 55, 80, 81, 54, 50]
     }]
     };
