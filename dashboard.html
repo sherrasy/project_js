@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,70 +14,74 @@
 
 <body>
     <div class="dashboard">
-        <div class="dashboard__elem dashboard__timeDateBlock">
-            <div id="time"></div>
-            <div id="date"></div>
-            <div id="fact"></div>
-        </div>
-        <div class="dashboard__elem dashboard__userBlock">
-            <input class="dashboard__userBlock__inputimg" type="file" id="bannerImg">
-            <img class="dashboard__userBlock__img" src="" id="tableBanner">
-            <div class="dashboard__userBlock__name" id="username">
-                My name
-            </div>
-            <div class="dashboard__userBlock__cristall">
-                <img src="assets/diamond.png">
-                <input class="dashboard__userBlock__cristall__count" id="userCristall" type="text">
-            </div>
-            <div class="dashboard__userBlock__progress">
-                <p class="dashboard__userBlock__progress__text">My progress:
-                    <button class="dashboard__userBlock__progress__text__button" id="calculate_btn">Calculate</button>
-                </p>
-                <div class="dashboard__userBlock__progress__gcristall">
-                    <div id="gcristall"></div>
+        <div class="dashboard__container-1">
+            <div class="dashboard__elem dashboard__userBlock">
+                <input class="dashboard__userBlock__inputimg" type="file" id="bannerImg">
+                <img class="dashboard__userBlock__img" src="" id="tableBanner">
+                <div class="dashboard__userBlock__name" id="username">
+                    My name
                 </div>
-                <div class="dashboard__userBlock__progress__glection">
-                    <div id="glection"></div>
+                <div class="dashboard__userBlock__cristall">
+                    <img src="assets/diamond.png">
+                    <input class="dashboard__userBlock__cristall__count" id="userCristall" type="text">
                 </div>
-            </div>
-        </div>
-        <div class="dashboard__elem dashboard__weatherBlock">
-            <div class="weather">
-                <h2 class="weather__title">Weather</h2>
-                <input type="text" class="weather__cityName" id="cityName" placeholder="Enter city name">
-                <button class="weather__citySend" id="sendCity">Send</button>
-                <div class="weather__current current">
-                    <div class="current__line">
-                        <span class="current__line" id="w-location"></span>
-                        <button class="current__cityChange hidden" id="changeCity">Change</button>
+                <div class="dashboard__userBlock__progress">
+                    <p class="dashboard__userBlock__progress__text">My progress:
+                        <button class="dashboard__userBlock__progress__text__button" id="calculate_btn">Calculate</button>
+                    </p>
+                    <div class="dashboard__userBlock__progress__gcristall">
+                        <div id="gcristall"></div>
                     </div>
-                    <div class="current__line"><img src="" id="w-icon"></div>
-                    <div class="current__line" id="w-temp"></div>
-                    <div class="current__line" id="w-status"></div>
-                    <div class="current__line" id="w-hi"></div>
-                    <div class="current__line" id="w-low"></div>
+                    <div class="dashboard__userBlock__progress__glection">
+                        <div id="glection"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard__elem dashboard__timeDateBlock">
+                <div id="time"></div>
+                <div id="date"></div>
+                <div id="fact"></div>
+            </div>
+            <div class="dashboard__elem dashboard__weatherBlock">
+                <div class="weather">
+                    <h2 class="weather__title">Weather</h2>
+                    <input type="text" class="weather__cityName" id="cityName" placeholder="Enter city name">
+                    <button class="weather__citySend" id="sendCity">Send</button>
+                    <div class="weather__current current">
+                        <div class="current__line">
+                            <span class="current__line" id="w-location"></span>
+                            <button class="current__cityChange hidden" id="changeCity">Change</button>
+                        </div>
+                        <div class="current__line"><img src="" id="w-icon"></div>
+                        <div class="current__line" id="w-temp"></div>
+                        <div class="current__line" id="w-status"></div>
+                        <div class="current__line" id="w-hi"></div>
+                        <div class="current__line" id="w-low"></div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="dashboard__elem dashboard__notesBlock">
-            <div class="notes">
-                <h1 class="notes__title">Notes</h1>
-                <div class="notes__block ">
-                    <div class="note">
-                        <input class="note__text" placeholder="Note text" required></input>
-                        <button class="note__addNote" id="addNote">Add</button>
-                    </div>
-                    <div class="result">
-                        <ul class="result__list">
+        <div class="dashboard__container-2">
+            <div class="dashboard__elem dashboard__notesBlock">
+                <div class="notes">
+                    <h1 class="notes__title">Notes</h1>
+                    <div class="notes__block ">
+                        <div class="note">
+                            <input class="note__text" placeholder="Note text" required></input>
+                            <button class="note__addNote" id="addNote">Add</button>
+                        </div>
+                        <div class="result">
+                            <ul class="result__list">
 
-                        </ul>
+                            </ul>
+                        </div>
+                        <button class="note__deleteAll" id="deleteAll">Delete all</button>
                     </div>
-                    <button class="note__deleteAll" id="deleteAll">Delete all</button>
                 </div>
             </div>
-        </div>
-        <div class=" dashboard__elem dashboard__graphicsBlock">
-            <canvas id="chart"></canvas>
+            <div class=" dashboard__elem dashboard__graphicsBlock">
+                <canvas id="chart"></canvas>
+            </div>
         </div>
     </div>
     <script src="bundle.js"></script>

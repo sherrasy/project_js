@@ -16,16 +16,8 @@ html {
       display: grid;
       height: 100%;
       width: 100%;
+      grid-template-rows: 1fr 0.8fr;
 
-      @media screen and (max-width: 700px) {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
-      }
-
-      @media screen and (min-width: 701px) {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-      }
 
       &__elem {
         background-color: $superlight-violet;
@@ -38,6 +30,12 @@ html {
 
       &__graphicsBlock {
         padding: 10px;
+        width: 50%;
+
+        @media screen and (max-width: 700px) {
+          height: 300px;
+          width: auto;
+        }
       }
 
       &__userBlock {
@@ -133,6 +131,7 @@ html {
         justify-self: center;
         padding: 10px;
         justify-items: center;
+
         @media screen and (max-width: 280px) {
           width: 230px;
         }
@@ -149,9 +148,12 @@ html {
           width: 350px;
         }
       }
+
       &__notesBlock {
         display: grid;
         justify-self: center;
+        width: 50%;
+
         @media screen and (max-width: 280px) {
           width: 230px;
         }
@@ -171,6 +173,7 @@ html {
     }
   }
 }
+
 .animation {
   position: relative;
   animation: width-up 2s;
@@ -256,11 +259,13 @@ button:hover {
   background-color: $main-violet;
   color: white;
 }
+
 .notes {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   padding: 10px;
+
   &__title {
     color: $dark-violet;
   }
@@ -269,23 +274,28 @@ button:hover {
     line-height: 1.25px;
   }
 }
+
 .note {
   &__text {
     margin: 0px 10px;
   }
 }
+
 .result {
   &__list {
     text-decoration: none;
   }
 }
+
 ul {
   padding: 10px;
 }
+
 li {
   text-align: start;
   list-style-type: none;
 }
+
 .note-body {
   margin: 0px 10px;
 }
@@ -296,16 +306,33 @@ li {
   font-weight: 800;
   color: $dark-violet;
 }
+
 #date {
   font-weight: 600;
   font-size: 30px;
   color: $grey;
 }
+
 #fact {
   padding: 10px;
   font-size: 19px;
   color: $grey;
 }
-#fact > p {
+
+#fact>p {
   font-weight: 600;
+}
+
+.dashboard__container-1 {
+  grid-row: 1/2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dashboard__container-2 {
+  grid-row: 2/3;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
