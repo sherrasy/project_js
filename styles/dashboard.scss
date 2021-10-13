@@ -127,6 +127,50 @@ html {
           width: 350px;
         }
       }
+
+      &__timeDateBlock {
+        display: grid;
+        justify-self: center;
+        padding: 10px;
+        justify-items: center;
+
+        @media screen and (max-width: 280px) {
+          width: 230px;
+        }
+
+        @media screen and (min-width: 281px) and (max-width: 320px) {
+          width: 280px;
+        }
+
+        @media screen and (min-width: 321px) and (max-width: 800px) {
+          width: 320px;
+        }
+
+        @media screen and (min-width: 801px) {
+          width: 350px;
+        }
+      }
+
+      &__notesBlock {
+        display: grid;
+        justify-self: center;
+
+        @media screen and (max-width: 280px) {
+          width: 230px;
+        }
+
+        @media screen and (min-width: 281px) and (max-width: 320px) {
+          width: 280px;
+        }
+
+        @media screen and (min-width: 321px) and (max-width: 800px) {
+          width: 320px;
+        }
+
+        @media screen and (min-width: 801px) {
+          width: 350px;
+        }
+      }
     }
   }
 }
@@ -255,4 +299,27 @@ li {
 
 .note-body {
   margin: 0px 10px;
+}
+
+#time {
+  padding: 20px;
+  font-size: 50px;
+  font-weight: 800;
+  color: $dark-violet;
+}
+
+#date {
+  font-weight: 600;
+  font-size: 30px;
+  color: $grey;
+}
+
+#fact {
+  padding: 10px;
+  font-size: 19px;
+  color: $grey;
+}
+
+#fact>p {
+  font-weight: 600;
 }

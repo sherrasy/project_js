@@ -117,9 +117,63 @@ function getName() {
   document.getElementById("username").innerHTML = name;
 }
 
+function getDate() {
+  const date = new Date();
+  let day = date.getDate();
+  let month = date.getMonth() + 1;
+  let year = date.getFullYear();
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let seconds = date.getSeconds();
+
+  if (day < 10) {
+    day = "0" + day;
+  } else {
+    day;
+  }
+  if (month < 10) {
+    month = "0" + month;
+  } else {
+    month;
+  }
+  if (hours < 10) {
+    hours = "0" + hours;
+  } else {
+    hours;
+  }
+  if (minutes < 10) {
+    minutes = "0" + minutes;
+  } else {
+    minutes;
+  }
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  } else {
+    seconds;
+  }
+
+  year = year.toString().slice(-2);
+  const dateInfo = document.getElementById("date");
+  dateInfo.innerHTML = `${day}.${month}.${year}`;
+  const timeInfo = document.getElementById("time");
+  timeInfo.innerHTML = `${hours}:${minutes}:${seconds}`;
+  setTimeout("getDate()", 1000);
+}
+
+function showFact() {
+  const now = new Date();
+  const m = now.getMonth();
+  const d = now.getDate();
+  const factInfo = document.getElementById("fact");
+  fetch("http://numbersapi.com/" + m + "/" + d + "/date")
+    .then((response) => response.text())
+    .then((fact) => (factInfo.innerHTML = "<p>Interesting fact:</p>" + fact));
+}
+
 document.addEventListener("DOMContentLoaded", function (event) {
   getWeather();
-
+  getDate();
+  showFact();
   const username = localStorage.getItem("username");
   if (username) {
     document.getElementById("username").innerHTML = username;
