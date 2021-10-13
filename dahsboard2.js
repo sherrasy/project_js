@@ -147,7 +147,7 @@ function getDate() {
     minutes;
   }
   if (seconds < 10) {
-    daminutesy = "0" + minutes;
+    seconds = "0" + seconds;
   } else {
     seconds;
   }
