@@ -95,27 +95,42 @@ addNoteBtn.onclick = function addNote() {
   }
   deleteNote(deleteNoteBtn);
 
-  // localStorage.setItem("notes", ul.innerHTML);
+  localStorage.setItem("notes", ul.innerHTML);
 };
 
 function deleteNote(element) {
   element.addEventListener("click", (event) => {
     element.parentElement.remove();
     event.stopPropagation();
+    localStorage.setItem("notes", ul.innerHTML);
   });
 }
 
 deleteAllBtn.onclick = function deleteNotes() {
   ul.innerHTML = "";
-  // localStorage.removeItem("notes");
+  localStorage.removeItem("notes");
 };
+
+function getName() {
+  const name = prompt("What's your name?");
+  localStorage.setItem("username", name);
+  document.getElementById("username").innerHTML = name;
+}
 
 document.addEventListener("DOMContentLoaded", function (event) {
   getWeather();
-  // const data = localStorage.getItem("notes");
-  // if (data) {
-  //   ul.innerHTML = data;
-  // }
+
+  const username = localStorage.getItem("username");
+  if (username) {
+    document.getElementById("username").innerHTML = username;
+  } else {
+    getName();
+  }
+
+  const data = localStorage.getItem("notes");
+  if (data) {
+    ul.innerHTML = data;
+  }
   const deleteNoteBtns = document.getElementsByClassName("deleteNote");
   for (const button of deleteNoteBtns) {
     deleteNote(button);
