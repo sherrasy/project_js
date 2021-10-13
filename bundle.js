@@ -242,7 +242,7 @@ function chartGraph(){
 
     var options = {
     responsive: true,
-    maintainAspectRatio: true,
+    maintainAspectRatio: false,
     animation: {
         easing: 'easeInOutQuad',
         duration: 520

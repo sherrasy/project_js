@@ -5,8 +5,8 @@ html {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 html body {
@@ -21,31 +21,15 @@ html body .dashboard {
   display: grid;
   height: 100%;
   width: 100%;
-}
-
-@media screen and (max-width: 700px) {
-  html body .dashboard {
-    -ms-grid-columns: 1fr;
-    grid-template-columns: 1fr;
-    -ms-grid-rows: 1fr;
-    grid-template-rows: 1fr;
-  }
-}
-
-@media screen and (min-width: 701px) {
-  html body .dashboard {
-    -ms-grid-columns: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-    -ms-grid-rows: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
+  -ms-grid-rows: 1fr 0.8fr;
+      grid-template-rows: 1fr 0.8fr;
 }
 
 html body .dashboard__elem {
   background-color: #f7f7f9;
   border-radius: 40px;
   -webkit-box-shadow: 0px 4px 16px rgba(78, 55, 55, 0.15);
-  box-shadow: 0px 4px 16px rgba(78, 55, 55, 0.15);
+          box-shadow: 0px 4px 16px rgba(78, 55, 55, 0.15);
   margin: 20px;
   font-family: "Raleway", sans-serif;
   text-align: center;
@@ -53,18 +37,26 @@ html body .dashboard__elem {
 
 html body .dashboard__graphicsBlock {
   padding: 10px;
+  width: 50%;
+}
+
+@media screen and (max-width: 700px) {
+  html body .dashboard__graphicsBlock {
+    height: 300px;
+    width: auto;
+  }
 }
 
 html body .dashboard__userBlock {
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 10px;
   color: #68666e;
   -ms-grid-column-align: center;
-  justify-self: center;
+      justify-self: center;
 }
 
 @media screen and (max-width: 280px) {
@@ -100,7 +92,7 @@ html body .dashboard__userBlock__img {
   max-height: 200px;
   margin: 10px;
   -ms-grid-column-align: center;
-  justify-self: center;
+      justify-self: center;
 }
 
 html body .dashboard__userBlock__name {
@@ -139,7 +131,7 @@ html body .dashboard__weatherBlock {
   display: -ms-grid;
   display: grid;
   -ms-grid-column-align: center;
-  justify-self: center;
+      justify-self: center;
 }
 
 @media screen and (max-width: 280px) {
@@ -167,8 +159,10 @@ html body .dashboard__weatherBlock {
 }
 
 html body .dashboard__timeDateBlock {
+  display: -ms-grid;
   display: grid;
-  justify-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
   padding: 10px;
   justify-items: center;
 }
@@ -198,8 +192,11 @@ html body .dashboard__timeDateBlock {
 }
 
 html body .dashboard__notesBlock {
+  display: -ms-grid;
   display: grid;
-  justify-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  width: 50%;
 }
 
 @media screen and (max-width: 280px) {
@@ -229,18 +226,17 @@ html body .dashboard__notesBlock {
 .animation {
   position: relative;
   -webkit-animation: width-up 2s;
-  animation: width-up 2s;
+          animation: width-up 2s;
   -webkit-animation-duration: 2s;
-  animation-duration: 2s;
+          animation-duration: 2s;
   -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 @-webkit-keyframes width-up {
   from {
     height: 0px;
   }
-
   to {
     height: 180px;
   }
@@ -250,7 +246,6 @@ html body .dashboard__notesBlock {
   from {
     height: 0px;
   }
-
   to {
     height: 180px;
   }
@@ -258,7 +253,7 @@ html body .dashboard__notesBlock {
 
 .line-chart {
   -webkit-animation: fadeIn 600ms cubic-bezier(0.57, 0.25, 0.65, 1) 1 forwards;
-  animation: fadeIn 600ms cubic-bezier(0.57, 0.25, 0.65, 1) 1 forwards;
+          animation: fadeIn 600ms cubic-bezier(0.57, 0.25, 0.65, 1) 1 forwards;
   opacity: 0;
   max-width: 640px;
   width: 100%;
@@ -290,8 +285,8 @@ html body .dashboard__notesBlock {
   display: grid;
   grid-gap: 10px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   line-height: 1.5;
 }
 
@@ -329,7 +324,7 @@ button {
 
 button:hover {
   -webkit-filter: drop-shadow(1px 2px 4px #6f37b9);
-  filter: drop-shadow(1px 2px 4px #6f37b9);
+          filter: drop-shadow(1px 2px 4px #6f37b9);
   border: none;
   border-radius: 10px;
   background-color: #6f3acf;
@@ -342,10 +337,10 @@ button:hover {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 10px;
 }
 
@@ -397,8 +392,35 @@ li {
   color: #68666e;
 }
 
-#fact>p {
+#fact > p {
   font-weight: 600;
 }
 
+.dashboard__container-1 {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.dashboard__container-2 {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 /*# sourceMappingURL=dashboard.css.map */
