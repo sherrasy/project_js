@@ -15,22 +15,10 @@
 
 <body>
     <div class="dashboard">
-        <div class="dashboard__elem dashboard__notesBlock">
-            <div class="notes">
-                <h1 class="notes__title">Notes</h1>
-                <div class="notes__block ">
-                    <div class="note">
-                        <input class="note__text" placeholder="Note text" required></input>
-                        <button class="note__addNote" id="addNote">Add</button>
-                    </div>
-                    <div class="result">
-                        <ul class="result__list">
-
-                        </ul>
-                    </div>
-                    <button class="note__deleteAll" id="deleteAll">Delete all</button>
-                </div>
-            </div>
+        <div class="dashboard__elem dashboard__timeDateBlock">
+            <div id="time"></div>
+            <div id="date"></div>
+            <div id="fact"></div>
         </div>
         <div class="dashboard__elem dashboard__userBlock">
             <input class="dashboard__userBlock__inputimg" type="file" id="bannerImg">
@@ -69,6 +57,23 @@
                     <div class="current__line" id="w-status"></div>
                     <div class="current__line" id="w-hi"></div>
                     <div class="current__line" id="w-low"></div>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard__elem dashboard__notesBlock">
+            <div class="notes">
+                <h1 class="notes__title">Notes</h1>
+                <div class="notes__block ">
+                    <div class="note">
+                        <input class="note__text" placeholder="Note text" required></input>
+                        <button class="note__addNote" id="addNote">Add</button>
+                    </div>
+                    <div class="result">
+                        <ul class="result__list">
+
+                        </ul>
+                    </div>
+                    <button class="note__deleteAll" id="deleteAll">Delete all</button>
                 </div>
             </div>
         </div>

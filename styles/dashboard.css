@@ -124,6 +124,56 @@ html body .dashboard__weatherBlock {
     width: 350px;
   }
 }
+html body .dashboard__timeDateBlock {
+  display: grid;
+  justify-self: center;
+  padding: 10px;
+  justify-items: center;
+}
+@media screen and (max-width: 280px) {
+  html body .dashboard__timeDateBlock {
+    width: 230px;
+  }
+}
+@media screen and (min-width: 281px) and (max-width: 320px) {
+  html body .dashboard__timeDateBlock {
+    width: 280px;
+  }
+}
+@media screen and (min-width: 321px) and (max-width: 800px) {
+  html body .dashboard__timeDateBlock {
+    width: 320px;
+  }
+}
+@media screen and (min-width: 801px) {
+  html body .dashboard__timeDateBlock {
+    width: 350px;
+  }
+}
+html body .dashboard__notesBlock {
+  display: grid;
+  justify-self: center;
+}
+@media screen and (max-width: 280px) {
+  html body .dashboard__notesBlock {
+    width: 230px;
+  }
+}
+@media screen and (min-width: 281px) and (max-width: 320px) {
+  html body .dashboard__notesBlock {
+    width: 280px;
+  }
+}
+@media screen and (min-width: 321px) and (max-width: 800px) {
+  html body .dashboard__notesBlock {
+    width: 320px;
+  }
+}
+@media screen and (min-width: 801px) {
+  html body .dashboard__notesBlock {
+    width: 350px;
+  }
+}
 
 .animation {
   position: relative;
@@ -236,4 +286,27 @@ li {
 
 .note-body {
   margin: 0px 10px;
+}
+
+#time {
+  padding: 20px;
+  font-size: 50px;
+  font-weight: 800;
+  color: #4e2a92;
+}
+
+#date {
+  font-weight: 600;
+  font-size: 30px;
+  color: #68666e;
+}
+
+#fact {
+  padding: 10px;
+  font-size: 19px;
+  color: #68666e;
+}
+
+#fact > p {
+  font-weight: 600;
 }/*# sourceMappingURL=dashboard.css.map */
