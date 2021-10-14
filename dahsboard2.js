@@ -111,8 +111,14 @@ deleteAllBtn.onclick = function deleteNotes() {
   localStorage.removeItem("notes");
 };
 
+let userName= document.getElementById('username');
+userName.addEventListener('click', function(){ getName()});
+
 function getName() {
-  const name = prompt("What's your name?");
+  let name = prompt("What's your name?");
+  if (name == null || name == ''){
+    name = 'User';
+  }
   localStorage.setItem("username", name);
   document.getElementById("username").innerHTML = name;
 }
