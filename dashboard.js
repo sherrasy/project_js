@@ -74,6 +74,9 @@ function fetchimage() {
             userInput.style.opacity = "0";
             userInput.style.margin = "-10px"
         }
+    else{
+            changeAvatar();
+        }
     img.src = dataImage;
 }
 
@@ -87,7 +90,7 @@ function changeAvatar(){
     let userInput = document.getElementById('bannerImg');
     userInput.style.opacity = "1";
     userInput.style.margin = "10px"
-    userInput.style.marginLeft = "50px"
+    userInput.style.marginLeft = "25%"
 }
 
 
@@ -105,12 +108,45 @@ document.addEventListener("DOMContentLoaded", function (event){
     if (item != null){
         graphics_orange(item);
     }
-    chartGraph();
+    let march = localStorage.getItem('March');
+    if (march == null){
+        march = 6;
+    }
+    let april = localStorage.getItem('April');
+    if (april == null){
+        april = 8;
+    }
+    let may = localStorage.getItem('May');
+    if (may == null){
+        may = 6;
+    }
+    let june = localStorage.getItem('June');
+    if (june == null){
+        june = 1;
+    }
+    let july = localStorage.getItem('July');
+    if (july == null){
+        july = 6;
+    }
+    let august = localStorage.getItem('August');
+    if (august == null){
+        august = 9;
+    }
+    let september = localStorage.getItem('September');
+    if (september == null){
+        september = 15;
+    }
+    let october = localStorage.getItem('October');
+    if (october == null){
+        october = 3;
+    }
+    chartGraph(march, april, may, june, july, august, september, october);
 })
 
 function Calculate(){
     document.querySelector('.dashboard__userBlock__progress').classList.remove='animation';
     let cristall = document.getElementById("userCristall");
+    let reg = /^[ 0-9]+$/;
     if (cristall.value==""){
         cristall.style.borderColor = "red";
         alert('Input the number of crystals!')
@@ -126,7 +162,6 @@ function Calculate(){
             document.getElementById('glection').innerHTML="";
             graphics_blue(Number(cristall.value));
             let countLec = prompt('What week did you stop at the lectures?');
-            let reg = /^[ 0-9]+$/
             if (reg.test(countLec)){
                 if(countLec > 31){
                     alert('Too many!');
@@ -140,7 +175,64 @@ function Calculate(){
                 alert('Input the number!');
             }
         }
-    
+    let graphic = [];
+    graphic[0] = prompt('How much homework did you do in March');
+    if(reg.test(graphic[0])){
+        localStorage.setItem('March', graphic[0]);
+        graphic[1] = prompt('How much homework did you do in April?');
+        if(reg.test(graphic[1])){
+            localStorage.setItem('April', graphic[1]);
+            graphic[2] = prompt('How much homework did you do in May?');
+            if(reg.test(graphic[2])){
+                localStorage.setItem('May', graphic[2]);
+                graphic[3] = prompt('How much homework did you do in June?');
+                if(reg.test(graphic[3])){
+                    localStorage.setItem('June', graphic[3]);
+                    graphic[4] = prompt('How much homework did you do in July?');
+                    if(reg.test(graphic[4])){
+                        localStorage.setItem('July', graphic[4]);
+                        graphic[5] = prompt('How much homework did you do in August?');
+                        if(reg.test(graphic[5])){
+                            localStorage.setItem('August', graphic[5]);
+                            graphic[6] = prompt('How much homework did you do in September?');
+                            if(reg.test(graphic[6])){
+                                localStorage.setItem('September', graphic[6]);
+                                graphic[7] = prompt('How much homework did you do in October?');
+                                if(reg.test(graphic[7])){
+                                    localStorage.setItem('October', graphic[7]);
+                                }
+                                else{
+                                    alert('Input the number!');
+                                }
+                            }
+                            else{
+                                alert('Input the number!');
+                            }
+                        }
+                        else{
+                            alert('Input the number!');
+                        }
+                    }
+                    else{
+                        alert('Input the number!');
+                    }
+                }
+                else{
+                    alert('Input the number!');
+                }
+            }
+            else{
+                alert('Input the number!');
+            }
+            
+        }
+        else{
+            alert('Input the number!');
+        }
+    }
+    else{
+        alert('Input the number!');
+    }
 }
 
 var ProgressBar = require('progressbar.js');
@@ -216,7 +308,7 @@ function graphics_orange(countLec){
 
 let Chart = require('Chart.js');
 
-function chartGraph(){
+function chartGraph(march, april, may, june, july, august, september, october){
     var chart    = document.getElementById('chart').getContext('2d'),
     gradient = chart.createLinearGradient(0, 0, 0, 450);
 
@@ -226,15 +318,15 @@ function chartGraph(){
 
 
     var data  = {
-    labels: [ 'January', 'February', 'March', 'April', 'May', 'June' ],
+    labels: [ 'March', 'April', 'May', 'June', 'Jule', 'August', 'September', 'October'],
     datasets: [{
-            label: 'Custom Label Name',
+            label: 'My homework',
             backgroundColor: gradient,
             fill: true,
             pointBackgroundColor: 'white',
             borderWidth: 1,
             borderColor: '#6f3acf',
-            data: [50, 55, 80, 81, 54, 50]
+            data: [march, april, may, june, july, august, september, october]
     }]
     };
 
